@@ -1,6 +1,6 @@
 ---
 extends:
-  - formidable/configurations/es6-node-test
+  - formidable/configurations/es6-react-test
 
 rules:
   object-property-newline: ["error", { allowAllPropertiesOnSameLine: true }]
