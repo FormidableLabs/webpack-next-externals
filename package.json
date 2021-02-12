@@ -1,0 +1,9 @@
+{
+  "name": "webpack-next-externals",
+  "version": "0.0.1",
+  "description": "Flexible webpack externals configuration for Next.js",
+  "main": "index.js",
+  "repository": "https://github.com/FormidableLabs/webpack-next-externals",
+  "author": "Ryan Roemer <ryan.roemer@formidable.com>",
+  "license": "MIT"
+}
