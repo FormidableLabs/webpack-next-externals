@@ -40,6 +40,7 @@ describe("TODO REMOVE", () => {
       await nextBuild(dir);
 
       const pages = await readPages(dir);
+      // eslint-disable-next-line no-console
       console.log("TODO HERE", pages);
     });
   });

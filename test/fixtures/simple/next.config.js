@@ -14,6 +14,7 @@ module.exports = {
       config.output.pathinfo = true;
 
       // TODO: HERE -- We care about these in terms of things to ignore.
+      // eslint-disable-next-line no-console
       console.log("TODO HERE CONFIG", {
         resolve: {
           alias: config.resolve.alias

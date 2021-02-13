@@ -9,7 +9,8 @@
   "scripts": {
     "clean": "rimraf 'test/fixtures/*/.next'",
     "lint": "eslint .",
-    "test": "mocha"
+    "test": "mocha",
+    "check": "yarn lint && yarn mocha"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
