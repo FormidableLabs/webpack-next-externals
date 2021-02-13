@@ -5,7 +5,7 @@ module.exports = {
   webpack: (config, { isServer }) => {
     // Speed things up by disabling prod stuff we don't cate about.
     config.mode = "development";
-    config.devtool = "false";
+    config.devtool = false;
     config.optimization.minimize = false;
     config.optimization.minimizer = [];
 
