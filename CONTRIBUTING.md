@@ -5,6 +5,15 @@ Thanks for contributing!
 
 ## Development
 
+If you want to try out a scenario in development, you can do something like:
+
+```sh
+# next dev test/fixtures/<SCENARIO>
+$ next dev test/fixtures/simple
+```
+
+## Quality checks
+
 ```sh
 $ yarn lint
 $ yarn test
