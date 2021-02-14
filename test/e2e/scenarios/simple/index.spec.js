@@ -1,12 +1,16 @@
 const { nextBuild } = require("../../build");
 const { readPages } = require("../../util");
+const FIXTURE_DIR = __dirname;
 
 describe("test/fixtures/simple", () => {
-  it("TODO DO A NEXT COMPILE ON DISK :P", async () => {
-    const dir = __dirname;
-    await nextBuild(dir);
+  let pages;
 
-    const pages = await readPages(dir);
+  beforeEach(async () => {
+    await nextBuild(FIXTURE_DIR);
+    pages = await readPages(FIXTURE_DIR);
+  });
+
+  it("TODO DO A NEXT COMPILE ON DISK :P", async () => {
     // eslint-disable-next-line no-console
     console.log("TODO HERE", pages);
   });
