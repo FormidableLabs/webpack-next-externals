@@ -7,9 +7,10 @@
   "author": "Ryan Roemer <ryan.roemer@formidable.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf 'test/fixtures/*/.next'",
+    "clean": "rimraf \"test/e2e/scenarios/*/.next\"",
     "lint": "eslint .",
-    "test": "mocha",
+    "test:e2e": "mocha \"test/e2e/scenarios/*/*.spec.js\"",
+    "test": "yarn test:e2e",
     "check": "yarn lint && yarn mocha"
   },
   "devDependencies": {
