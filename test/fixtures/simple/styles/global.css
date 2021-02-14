@@ -1,0 +1,13 @@
+html,
+body {
+  font-family: Comic Sans MS, Comic Sans;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: magenta;
+  text-decoration: none;
+}

@@ -1,0 +1,10 @@
+---
+extends:
+  - formidable/configurations/es6-react-test
+
+rules:
+  object-property-newline: ["error", { allowAllPropertiesOnSameLine: true }]
+  camelcase: ["error", {allow: ["node_modules"]}]
+  max-statements: off
+  func-style: off
+  react/prop-types: off
