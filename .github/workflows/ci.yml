@@ -31,4 +31,4 @@ jobs:
           CI: true
 
       - name: Checks
-        run: yarn run check
+        run: yarn run check-ci

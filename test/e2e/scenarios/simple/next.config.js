@@ -1,4 +1,5 @@
 
+const { nextExternals } = require("../../../../index");
 
 module.exports = {
   target: "serverless",
@@ -13,16 +14,10 @@ module.exports = {
       // Add more information in the bundle.
       config.output.pathinfo = true;
 
-      // TODO: HERE -- We care about these in terms of things to ignore.
-      // eslint-disable-next-line no-console
-      console.log("TODO HERE CONFIG", {
-        resolve: {
-          alias: config.resolve.alias
-        },
-        resolveLoader: {
-          alias: config.resolveLoader.alias
-        }
-      });
+      // Add externals wrapper.
+      config.externals = (config.externals || []).concat(
+        nextExternals({ config })
+      );
     }
 
     return config;
