@@ -1,0 +1,7 @@
+{
+  "name": "next",
+  "version": "0.0.1",
+  "description": "Noop placeholder for next to prevent flattening.",
+  "main": "index.js",
+  "license": "MIT"
+}

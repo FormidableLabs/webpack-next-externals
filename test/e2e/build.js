@@ -1,9 +1,9 @@
 
-const _nextBuild = require("next/dist/build").default;
+const { build } = require("next09");
 
 const nextBuild = (...args) => {
   if (process.env.NO_BUILD === "true") { return Promise.resolve(); }
-  return _nextBuild(...args);
+  return build(...args);
 };
 
 module.exports = {
