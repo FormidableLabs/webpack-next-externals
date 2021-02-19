@@ -26,6 +26,8 @@ $ yarn run check
 
 #### E2E Tests
 
+TODO: DOCUMENT NEXT VERSIONS (running a specific version, running all versions)
+
 For our E2E tests, we run full on-disk builds for each example Next.js app found in `test/e2e/scenarios/<NAME>`. You can run only the E2E tests with:
 
 ```sh
