@@ -11,8 +11,10 @@
     "lint": "eslint .",
     "test:e2e": "mocha \"test/e2e/scenarios/*/*.spec.js\"",
     "test:e2e-cov": "nyc yarn test:e2e",
-    "test": "yarn test:e2e",
-    "test-cov": "yarn test:e2e-cov",
+    "test:spec": "mocha \"test/spec/*/*.spec.js\"",
+    "test:spec-cov": "nyc yarn test:spec",
+    "test": "yarn test:spec && yarn test:e2e",
+    "test-cov": "yarn test:spec-cov && yarn test:e2e-cov",
     "check": "yarn lint && yarn test",
     "check-ci": "yarn lint && yarn test-cov"
   },

@@ -6,7 +6,7 @@ const FIXTURE_DIR = __dirname;
 const VERSIONS = ["9", "10"];
 
 
-describe("test/fixtures/simple", () => {
+describe("test/e2e/scenarios/simple", () => {
   VERSIONS.forEach((version) => {
     describe(`Next.js v${version}`, () => {
       const output = path.resolve(__dirname, `../../.builds/simple/${version}`);

@@ -49,7 +49,7 @@ const nextBuild = ({ version, output, silent = true } = {}) => async (...args) =
   }
   const outputDir = path.resolve(output);
 
-  // TODO: CLEAN
+  // Clean.
   await Promise.all([
     fs.remove(path.resolve(buildDir, ".next")),
     fs.remove(outputDir)
