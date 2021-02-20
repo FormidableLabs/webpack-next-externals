@@ -12,7 +12,6 @@ describe("test/fixtures/simple", () => {
       const output = path.resolve(__dirname, `../../.builds/simple/${version}`);
       let pages;
 
-      // TODO: NEED TO STASH RESULTS
       beforeEach(async () => {
         await nextBuild({ version, output })(FIXTURE_DIR);
         pages = await readPages(output);

@@ -26,19 +26,25 @@ $ yarn run check
 
 #### E2E Tests
 
-TODO: DOCUMENT NEXT VERSIONS (running a specific version, running all versions)
-
 For our E2E tests, we run full on-disk builds for each example Next.js app found in `test/e2e/scenarios/<NAME>`. You can run only the E2E tests with:
 
 ```sh
 $ yarn test:e2e
 ```
 
-Because the build takes so long, if you are just developing test logic (as opposed to the core project code) and don't want to do a new build during each build, you can skip the build with:
+We run our tests multiple times against different versions of Next.js. (Our next installs are found in `test/packages/next<VERSION>`). Our builds run as follows:
+
+1. Remove any pre-existing builds in `test/scenarios/<SCENARIO>/.next` and `.builds/<SCENARIO>/<VERSION>`
+2. Run a Next.js build in `test/scenarios/<SCENARIO>` for each Next.js `VERSION`.
+3. Copy the new build from `test/scenarios/<SCENARIO>/.next` to `.builds/<SCENARIO>/<VERSION>/.next`
+
+Because the build takes so long, if you are just developing test logic (as opposed to the core project code) and don't want to do a new build during each build, you can skip the entire clean + build + copy steps with:
 
 ```sh
 $ NO_BUILD=true yarn test:e2e
 ```
+
+The tests will then use whatever was last produced in `.builds/<SCENARIO>/<VERSION>/.next`.
 
 ## Releasing a new version to NPM
 
