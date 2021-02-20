@@ -14,6 +14,8 @@ module.exports = {
       config.output.pathinfo = true;
 
       // Add externals wrapper.
+      //
+      // TODO: Have a process.env variable to switch on / off and stash outputs?
       config.externals = (config.externals || []).concat(
         nextExternals({ config })
       );
