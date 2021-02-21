@@ -19,7 +19,7 @@ describe("test/e2e/scenarios/simple", () => {
 
       it("TODO: ADD SCENARIO TESTS", async () => {
         // eslint-disable-next-line no-console
-        console.log("TODO HERE", pages);
+        console.log("TODO HERE", JSON.stringify(pages, null, 2));
       });
     });
   });
