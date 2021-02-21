@@ -52,8 +52,17 @@ const getBundled = (page) => {
   };
 };
 
-const getRequired = (page) => (page.match(/require\([^\)]+\)/gm) || [])
-  .map((line) => line.replace(/(^require\(['"]|['"]\)$)/g, ""));
+const getRequired = (page) => {
+  const required = {};
+
+  (page.match(/require\([^\)]+\)/gm) || [])
+    .map((line) => line.replace(/(^require\(['"]|['"]\)$)/g, ""))
+    .forEach((dep) => {
+      required[dep] = (required[dep] || 0) + 1;
+    });
+
+  return required;
+};
 
 // Read pages data into the form we'll assert against.
 const readPages = async (dir) => {
