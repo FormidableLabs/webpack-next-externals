@@ -1,7 +1,17 @@
 const path = require("path");
 const fs = require("fs").promises;
 
-const { getPackageName } = require("../../lib/package");
+const { getPackageFromParts } = require("../../lib/package");
+const { toPosix } = require("../../lib/path");
+
+// Traverse absolute paths to get ultimate package.
+const getPackageFromPath = (filePath = "") => {
+  const parts = toPosix(path.normalize(filePath)).split("/");
+  const nodeModulesIdx = parts.lastIndexOf("node_modules");
+  if (nodeModulesIdx === -1) { return null; }
+
+  return getPackageFromParts(parts.slice(nodeModulesIdx + 1));
+};
 
 const getBundled = (page) => {
   const webpack = {};
@@ -29,7 +39,7 @@ const getBundled = (page) => {
         return;
       }
 
-      const pkgName = getPackageName(info);
+      const pkgName = getPackageFromPath(info);
       if (pkgName) {
         packages[pkgName] = (packages[pkgName] || 0) + 1;
         return;
